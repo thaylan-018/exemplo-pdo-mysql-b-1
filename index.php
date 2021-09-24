@@ -1,8 +1,8 @@
 <?php
 require_once './vendor/autoload.php';
-use PDO;
+use ExemploPDOMySql\MySQLConnection; //PDO;
 
-$bd = new PDO('mysql:host=localhost;dbname=biblioteca', 'root', '');
+$bd = new MySQLConnection(); //PDO('mysql:host=localhost;dbname=biblioteca', 'root', '');
 $comando = $bd->prepare('SELECT * FROM generos');
 $comando->execute();
 
@@ -15,6 +15,7 @@ $generos = $comando->fetchAll(PDO::FETCH_ASSOC);
         <title>Biblioteca</title>
     </head>
     <body>
+        <a href="insert.php">Novo Gênero</a>
         <table>
             <tr>
                 <th>Id</th>
