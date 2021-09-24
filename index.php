@@ -15,6 +15,17 @@ $generos = $comando->fetchAll(PDO::FETCH_ASSOC);
         <title>Biblioteca</title>
     </head>
     <body>
-        
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+            </tr>
+            <?php foreach($generos as $g): ?>
+                <tr>
+                    <td><?=$g['id'] ?></td>
+                    <td><?=$g['nome'] ?></td>
+                </tr>
+            <?php endforeach ?>
+        </table>
     </body>
 </html>
